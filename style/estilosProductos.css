@@ -1,0 +1,125 @@
+body{
+    background: linear-gradient(135deg, #c5c5c5, #1a1a1a28, #cfffd4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+#sidebar{
+    width: 205px;
+    min-height: 105vh;
+    background-color:  rgba(3, 100, 0, 0.638);
+}
+#content{
+    flex: 1;
+   
+}
+.mi-footer{
+    background-color: darkgreen;
+    position: fixed;
+    bottom: 0;
+    width: 100px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+.modal-header{
+    background-color:black;
+    color: aliceblue;
+}.mi-encabeza{
+    background-color:  rgba(3, 100, 0, 0.638);
+    border-radius:left 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}.table{
+    border: #178a0d;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(1, 135, 10, 1);
+    background-color: #d3ffcb;
+} .table tr:nth-child(2){
+    background-color: #acf39dc9; /* Color de fondo (rojo claro) */
+}.btn-warning{
+    background-color:  rgba(61, 202, 18, 0.858);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}.btn-primary{
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color:rgba(61, 202, 18, 0.858);
+}.btn-danger{
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        background-color: rgb(215, 4, 4);
+}.btn-secondary{
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(101, 110, 102, 0.5);
+        background-color: rgb(60, 87, 60);
+    }
+    /* Estilos del menú */
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -200px; /* Oculto fuera de la vista */
+        width: 200px;
+        height: 100%;
+        background-color: #33632a; /* Color oscuro */
+        transition: left 0.3s ease;
+        z-index: 1050; /* Encima del contenido */
+        border-radius: 10px;
+    }
+
+    /* Cuando el menú está visible */
+    #sidebar.show {
+        left:0%;
+    }
+
+    /* Estilo del contenido principal */
+    #content {
+        margin-left: 0;
+        transition: margin-left 0.3s ease;
+    }
+
+    /* Contenido desplazado cuando el menú está visible */
+    #content.menu-open {
+        margin-left: 200px;
+    }
+
+     /* Estilos del botón de hamburguesa */
+     #menu-toggle {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1100; /* Por encima del sidebar */
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: #ffffff;
+    }
+
+    /* Fondo del botón para visibilidad */
+    #menu-toggle:hover {
+        background-color: rgba(55, 125, 34, 0.673);
+    }
+
+    /* Estilo del menú y contenido, sin cambios */
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100%;
+        background-color: #35772f;
+        transition: left 0.3s ease;
+        z-index: 1050;
+        padding-top: 80px;
+        margin-top: 70px;
+    }
+
+    #sidebar.show {
+        left: 0;
+    }
+
+    #content {
+        margin-left: 0;
+        transition: margin-left 0.3s ease;
+    }
+
+    #content.menu-open {
+        margin-left: 200px;
+
+    }
