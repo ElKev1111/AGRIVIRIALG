@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CRUD DE PRODUCTOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/estilosProductos.css">
+</head>
+<body>
+    <header class="mi-encabeza text-white text-center py-3">
+        <h1>Gestión de Productos</h1>
+    </header>
+    <div class="d-flex">
+        <nav id="sidebar" class="sidebar text-white py-3">
+            <h4> 
+                Menú</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="usuarios.html">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Configuración</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content" class="container-fluid p-4">
+            <button id="menu-toggle" class="btn">
+                &#9776; <!-- Icono de hamburguesa -->
+            </button>
+            <h2>CRUD de Productos</h2>
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Agregar Producto</button>
+            <table class="table table-bordered table-striped">
+                <thead class="bg-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Unidad medida</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Fecha Adquisición</th>
+                        <th scope="col">ID Proveedor</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>BioMix-730</td>
+                        <td>Bioestimulante - Biofertilizante</td>
+                        <td>5200</td>
+                        <td>25</td>
+                        <td>Litro</td>
+                        <td>Comestible</td>
+                        <td>2024-08-01</td>
+                        <td>101</td>
+                        <td>
+                            <button type="button" class="btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editarProductoModal">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal">Eliminar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>MB-50</td>
+                        <td>Control de plagas</td>
+                        <td>3800</td>
+                        <td>40</td>
+                        <td>litro</td>
+                        <td>comestible </td>
+                        <td>2024-07-23</td>
+                        <td>102</td>
+                        <td>
+                            <button type="button" class="btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editarProductoModal">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Biohumic</td>
+                        <td>ayuda a estructurar suelos </td>
+                        <td>6000</td>
+                        <td>30</td>
+                        <td>litro</td>
+                        <td>no comestible  </td>
+                        <td>2024-07-23</td>
+                        <td>103</td>
+                        <td>
+                            <button type="button" class="btn-warning btn-sm" data-bs-toggle="modal"data-bs-target="#editarProductoModal">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"data-bs-target="#eliminarProductoModal">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Biomyces</td>
+                        <td>control de plagas</td>
+                        <td>4500</td>
+                        <td>15</td>
+                        <td>litro</td>
+                        <td>comestible </td>
+                        <td>2024-08-10</td>
+                        <td>104</td>
+                        <td>
+                            <button type="button" class="btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#editarProductoModal">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal">Eliminar</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <footer class="mi-footer text-white text-center py-3 w-100">
+        <p>&copy; 2024 Mi app. Todos los derechos reservados</p>
+    </footer>
+    <div class="modal fedel" id="agregarProductoModal" tabindex="-1" aria-labelledby="agregarProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarProductoModalLabel">Agregar Productos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="txtID" class="form-label">ID</label>
+                            <input type="text" class="form-control" id="txtID" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="txtNombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtDescripcion" class="form-label">Descripcion</label>
+                            <input type="text" class="form-control" id="txtDescripcion" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtPrecio" class="form-label">Precio</label>
+                            <input type="text" class="form-control" id="txtPrecio" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtStock" class="form-label">Stock</label>
+                            <input type="text" class="form-control" id="txtStock" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtUndMedida" class="form-label">Unidad medida</label>
+                            <input type="text" class="form-control" id="txtUndMedida" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtCategoria" class="form-label">Categoria</label>
+                            <input type="text" class="form-control" id="txtCategoria" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtFeAd" class="form-label">Fecha Adquisicion</label>
+                            <input type="text" class="form-control" id="txtFeAd" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtIdProveedor" class="form-label">ID Proveedor</label>
+                            <input type="text" class="form-control" id="txtIdProveedor" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal edit usuario -->
+    <div class="modal fedel" id="editarProductoModal" tabindex="-1" aria-labelledby="editarProductoModal"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarProductoModal">Editar Productos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="txtEditarID" class="form-label">ID</label>
+                            <input type="text" class="form-control" id="txtEditarID" value="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtEditarNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="txtEditarNombre"value="BioMix-730" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtEditarDescripcion" class="form-label">Descripcion</label>
+                            <input type="text" class="form-control" id="txtEditarDescripcion" value="Bioestimulante - Biofertilizante">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtEditarPrecio" class="form-label">Precio</label>
+                            <input type="text" class="form-control" id="txtEditarPrecio" value="5200">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtEditarStock" class="form-label">Stock</label>
+                            <input type="text" class="form-control" id="txtEditarStock" value="25">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtEditarUdnMedida" class="form-label">Unidad medida</label>
+                            <input type="text" class="form-control" id="txtEditarUdnMedida" value="litro">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal eliminar-->
+     <div class="modal fade" id="eliminarProductoModal" tabindex="-1" aria-labelledby="eliminarProductoModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eliminarProductoModal">Eliminar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿está seguro de eliminar el producto seleccionado?</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger"data-bs-dismiss="modal">Eliminar</button>
+                </div>
+            </div>
+        </div>
+     </div>
+    <script>
+        // JavaScript para controlar el menú
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+            content.classList.toggle('menu-open');
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
