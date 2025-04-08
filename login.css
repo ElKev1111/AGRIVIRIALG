@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-content h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-field i {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #999;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-field input:focus {
+  border-color: #4caf50;
+}
+
+.btn-field {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 20px;
+}
+
+.btn-field button {
+  flex-basis: 48%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-field button:hover {
+  background: #45a049;
+}
+
+.btn-field button.disable {
+  background: #eaeaea;
+  color: #555;
+}
+
+.btn-field-center {
+  text-align: center;
+}
+
+.center-button {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background: #2196f3;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.center-button:hover {
+  background: #0b7dda;
+}
+
+p {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+p a {
+  color: #2196f3;
+  text-decoration: none;
+}

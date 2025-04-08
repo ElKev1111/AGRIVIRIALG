@@ -1,46 +1,30 @@
-let signUp = document.getElementById("signUp");
-let signIn = document.getElementById("signIn");
-let nameInput = document.getElementById("nameInput");
-let title = document.getElementById("title");
+const signUp = document.getElementById("signUp")
+const signIn = document.getElementById("signIn")
+const nameInput = document.getElementById("nameInput")
+const telefonoInput = document.getElementById("telefonoInput")
+const direccionInput = document.getElementById("direccionInput")
+const fechaInput = document.getElementById("fechaInput")
+const title = document.getElementById("title")
+const loginForm = document.getElementById("loginForm")
 
-signIn.onclick = function() {
-    nameInput.style.maxHeight = "0";
-    title.innerHTML = "Login";
-    signUp.classList.add("disable");
-    signIn.classList.remove("disable");
+signIn.onclick = () => {
+  nameInput.style.maxHeight = "0"
+  telefonoInput.style.maxHeight = "0"
+  direccionInput.style.maxHeight = "0"
+  fechaInput.style.maxHeight = "0"
+  title.innerHTML = "Login"
+  signUp.classList.add("disable")
+  signIn.classList.remove("disable")
+  loginForm.action = "php/login_usuario_be.php"
 }
 
-signUp.onclick = function() {
-    nameInput.style.maxHeight = "60px";
-    title.innerHTML = "Registro";
-    signUp.classList.remove("disable");
-    signIn.classList.add("disable");
-}
-
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    validarFormulario();
-});
-
-function validarFormulario() {
-    let correo = document.getElementById("correo").value;
-    let contrasena = document.getElementById("contrasena").value;
-
-    if (!correo || !validarEmail(correo)) {
-        alert("Por favor ingresa un correo válido.");
-        return;
-    }
-
-    if (!contrasena) {
-        alert("Por favor ingresa una contraseña.");
-        return;
-    }
-
-    // Si todo es válido, redirigimos a la página principal.
-    window.location.href = "index.html"; // Asegúrate de que la ruta a tu página principal sea correcta
-}
-
-function validarEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+signUp.onclick = () => {
+  nameInput.style.maxHeight = "60px"
+  telefonoInput.style.maxHeight = "60px"
+  direccionInput.style.maxHeight = "60px"
+  fechaInput.style.maxHeight = "60px"
+  title.innerHTML = "Registro"
+  signUp.classList.remove("disable")
+  signIn.classList.add("disable")
+  loginForm.action = "php/registro_usuario_be.php"
 }
